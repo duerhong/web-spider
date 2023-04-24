@@ -8,6 +8,7 @@ Python Web Spider 专门用于爬取网站内链，可以导出成csv,json,xml�
 https://web-tools.cn/web-spider
 
 ## 文件结构
+```
 config.py                   配置文件，可配置redis，日志，导出数据文件路径
 utils.py                    核心函数库
 worker.py                   爬取主程序
@@ -18,12 +19,15 @@ env-example                 env配置文件demo，请复制一份名称env的文
 requirements.txt            依赖安装
 data/csv                    当执行了导出csv文件后创建
 data/sitemap                当执行了导出sitemap文件后创建
+```
 ## 环境
-python3.8 +
-redis
+* python3.8 +
+* redis 任意版本
 
 ## 安装
+```commandline
 pip install -r requirements.txt
+```
 如果以上安装未能安装所有依赖程序，请手动安装依赖程序。
 
 ## 运行
@@ -41,6 +45,7 @@ REDIS_DB=0                  redis db
 
 ### 运行worker.py
 worker.py 为多线程 + 轮询监听运行，可以通过config.py 文件下配置spider_thread_list来调整线程数量
+
 运行：
 ```
 python worker.py
