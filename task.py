@@ -76,7 +76,11 @@ class SpiderTask:
             "info": info,
             "basic_page": basic_page,
         }
-        return self.redisConn.hset(config['redis_task_list_key'], taskID, json.dumps(data))
+        ret = self.redisConn.hset(config['redis_task_list_key'], taskID, json.dumps(data))
+        if ret:
+            return taskID
+        else:
+            return None
 
     def getFinishTask(self):
         result = []
